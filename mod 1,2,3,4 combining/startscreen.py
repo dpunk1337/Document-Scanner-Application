@@ -30,8 +30,7 @@ def setModuletoOne(a,b,c,d):
 		controlFlag=False
 
 
-sysHeight=864
-sysWidth=1536
+sysWidth,sysHeight=pd.getSysDimensions()
 gray=(50,50,50)
 # screenBlank=np.zeros((sysHeight,sysWidth,3),np.uint8)
 folder='background/'
