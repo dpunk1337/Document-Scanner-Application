@@ -21,8 +21,7 @@ overlayBlank=None
 overlayList=[]
 currentOverlay=None
 
-sysWidth=1536
-sysHeight=864
+sysWidth,sysHeight=pd.getSysDimensions()
 screenBlank=np.zeros((sysHeight,sysWidth,3),np.uint8)+50
 screenList=list()
 
@@ -30,8 +29,8 @@ screenList=list()
 bdownflag=False
 flag=False
 
-xUnit=153
-yUnit=86
+xUnit=sysWidth//10
+yUnit=sysHeight//10
 
 gray=(50,50,50)
 
