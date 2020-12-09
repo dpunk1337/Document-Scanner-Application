@@ -8,8 +8,7 @@ import drawingArea as _d
 import pydialog as pd
 import documentDetector as _dd
 
-sysWidth=1536
-sysHeight=864
+sysWidth,sysHeight=pd.getSysDimensions()
 screenBlank=np.zeros((sysHeight,sysWidth,3),np.uint8)+50
 gray=(50,50,50)
 currentScreen=None
