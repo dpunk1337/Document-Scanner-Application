@@ -1,8 +1,20 @@
 import cv2
 import numpy as np 
+import pydialog as pd 
+
+# sysWidth=1536
+# sysHeight=864
+sysWidth,sysHeight=pd.getSysDimensions();
+mpW=sysWidth/1536;
+mpH=sysHeight/864;
 
 class Menu:
 	def __init__(self,x1,y1,WH,wx2,hy2,buttonList,hidden=False):
+		x1=int(mpW*x1);
+		y1=int(mpH*y1);
+		wx2=int(mpW*wx2);
+		hy2=int(mpH*hy2);
+
 		self.hidden=hidden
 		self.x1=x1
 		self.y1=y1

@@ -2,6 +2,13 @@ import cv2
 import numpy as np 
 import button as _b
 import trackbar as _t
+import pydialog as pd 
+
+# sysWidth=1536
+# sysHeight=864
+sysWidth,sysHeight=pd.getSysDimensions();
+mpW=sysWidth/1536;
+mpH=sysHeight/864;
 
 gray=(80,80,80)
 
@@ -9,6 +16,12 @@ class Dialog:
 	cancelFunction=None
 	okayFunction=None
 	def __init__(self,x1,y1,WH,wx2,hy2,nTabs,nTb,varNameList,functionList,hidden=False):
+		x1=int(mpW*x1)
+		y1=int(mpH*y1)
+		wx2=int(mpW*wx2)
+		hy2=int(mpH*hy2)
+
+
 		self.hidden=hidden
 		self.x1=x1
 		self.y1=y1
@@ -36,12 +49,12 @@ class Dialog:
 		self.image=self.image=np.zeros((self.height,self.width,3),np.uint8)+128
 
 	def createDialogButtons(self):
-		blist=_b.buttonTableCreator(('okay','cancel'),(Dialog.okayFunction,Dialog.cancelFunction),(gray,gray),1,2,2,self.width-20,self.tabHeight-20,10,10)
+		blist=_b.buttonTableCreator(('okay','cancel'),(Dialog.okayFunction,Dialog.cancelFunction),(gray,gray),1,2,2,int(self.width/mpW)-20,int(self.tabHeight/mpH)-20,10,10)
 		self.buttonList.extend(blist)
 
 	def createDialogTrackbars(self,nTb,varNameList,functionList):
 		for i in range(nTb):
-			tb=_t.Trackbar(10,(i+1)*self.tabHeight,True,self.width-20,self.tabHeight-10,varNameList[i],'screen',1,101,functionList[i])
+			tb=_t.Trackbar(10,(i+1)*(int(self.tabHeight/mpH)),True,(int(self.width/mpW))-20,(int(self.tabHeight/mpH))-10,varNameList[i],'screen',1,101,functionList[i])
 			self.trackbarList.append(tb)
 			tb.setMenu(self)
 		self.buttonList.extend(self.trackbarList)

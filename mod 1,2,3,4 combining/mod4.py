@@ -9,6 +9,9 @@ import drawingArea as _d
 import pyperclip
 from pyzbar import pyzbar
 
+# sysWidth=1536
+# sysHeight=864
+
 sysWidth,sysHeight=pd.getSysDimensions()
 screenBlank=np.zeros((sysHeight,sysWidth,3),np.uint8)+50
 gray=(50,50,50)

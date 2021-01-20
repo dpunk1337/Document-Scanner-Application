@@ -10,6 +10,8 @@ import trackbar as _t
 import sys
 
 
+# sysWidth=1536
+# sysHeight=864
 
 screenCopy=None
 flagg=True

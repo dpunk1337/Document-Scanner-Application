@@ -30,7 +30,7 @@ gray=(50,50,50)
 folder='background/'
 imageNames=('end (1).jpg','end (2).jpg','end (3).jpg','end (4).jpg','end (5).jpg','end (6).jpg')
 chosenOne=random.choice(imageNames)
-screenBlank=cv2.imread(folder+chosenOne)
+screenBlank=cv2.resize(cv2.imread(folder+chosenOne),(sysWidth,sysHeight))
 
 
 def functionerMenu(event,x,y,flags,params):
