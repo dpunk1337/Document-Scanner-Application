@@ -24,13 +24,14 @@ def mainMenu(a,b,c,d):
 	controlFlag=False
 
 
-sysWidth,sysHeight=pd.getSysDimensions()
+sysHeight=864
+sysWidth=1536
 gray=(50,50,50)
 # screenBlank=np.zeros((sysHeight,sysWidth,3),np.uint8)
 folder='background/'
 imageNames=('end (1).jpg','end (2).jpg','end (3).jpg','end (4).jpg','end (5).jpg','end (6).jpg')
 chosenOne=random.choice(imageNames)
-screenBlank=cv2.resize(cv2.imread(folder+chosenOne),(sysWidth,sysHeight))
+screenBlank=cv2.imread(folder+chosenOne)
 
 
 def functionerMenu(event,x,y,flags,params):

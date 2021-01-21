@@ -11,11 +11,9 @@ import imgfunctions as _imfu
 import dialog as _dlg
 
 # cv2.namedWindow('screen',cv2.WINDOW_NORMAL)
-# sysWidth=1536
-# sysHeight=864
-
 gray=(50,50,50)
-sysWidth,sysHeight=pd.getSysDimensions()
+sysWidth=1536
+sysHeight=864
 screenBlank=np.zeros((sysHeight,sysWidth,3),np.uint8)+50
 
 backList=list()

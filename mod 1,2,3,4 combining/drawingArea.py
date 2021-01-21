@@ -1,23 +1,9 @@
 import cv2
 import numpy as np 
 import copy
-import pydialog as pd
-
-# sysWidth=1536
-# sysHeight=864
-sysWidth,sysHeight=pd.getSysDimensions();
-mpW=sysWidth/1536;
-mpH=sysHeight/864;
 
 class DrawingArea:
 	def __init__(self,x1,y1,WH,wx2,hy2,padxy=0,hidden=False):
-		x1=int(mpW*x1);
-		y1=int(mpH*y1);
-		wx2=int(mpW*wx2);
-		hy2=int(mpH*hy2);
-		self.padx=int(mpW*padxy);
-		self.pady=int(mpH*padxy);
-
 		self.hidden=hidden
 		self.x1=x1
 		self.y1=y1
@@ -58,7 +44,7 @@ class DrawingArea:
 		self.originalImage=image
 		self.imgHeight=image.shape[0]
 		self.imgWidth=image.shape[1]
-		self.startCol,self.startRow,self.endCol,self.endRow=self.screenImagePadding(self.originalImage,self.imgHeight,self.imgWidth,self.height-(2*self.pady),self.width-(2*self.padx))
+		self.startCol,self.startRow,self.endCol,self.endRow=self.screenImagePadding(self.originalImage,self.imgHeight,self.imgWidth,self.height-(2*self.padxy),self.width-(2*self.padxy))
 		self.imgX1=self.startCol+self.x1
 		self.imgY1=self.startRow+self.y1
 		self.imgX2=self.endCol+self.x1

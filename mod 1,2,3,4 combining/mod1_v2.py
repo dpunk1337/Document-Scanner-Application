@@ -10,8 +10,6 @@ import trackbar as _t
 import sys
 
 
-# sysWidth=1536
-# sysHeight=864
 
 screenCopy=None
 flagg=True
@@ -23,7 +21,8 @@ overlayBlank=None
 overlayList=[]
 currentOverlay=None
 
-sysWidth,sysHeight=pd.getSysDimensions()
+sysWidth=1536
+sysHeight=864
 screenBlank=np.zeros((sysHeight,sysWidth,3),np.uint8)+50
 screenList=list()
 
@@ -31,8 +30,8 @@ screenList=list()
 bdownflag=False
 flag=False
 
-xUnit=sysWidth//10
-yUnit=sysHeight//10
+xUnit=153
+yUnit=86
 
 gray=(50,50,50)
 

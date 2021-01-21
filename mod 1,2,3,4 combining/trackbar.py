@@ -1,13 +1,6 @@
 import cv2
 import numpy as np 
 # import button as _b
-import pydialog as pd 
-
-# sysWidth=1536
-# sysHeight=864
-sysWidth,sysHeight=pd.getSysDimensions();
-mpW=sysWidth/1536;
-mpH=sysHeight/864;
 
 def passer(button,menu,mouseX,mouseY):
 	print((button.x1,button.y1),(button.x2,button.y2))
@@ -20,12 +13,6 @@ def map(n,x1,y1,x2,y2):
 class Trackbar:
 	def __init__(self,x1,y1,WH,wx2,hy2,name,window,r1,r2,function,padY=0,padX=0):
 		# self.hidden=hidden
-		x1=int(mpW*x1);
-		y1=int(mpH*y1);
-		wx2=int(mpW*wx2);
-		hy2=int(mpH*hy2);
-		
-		
 		self.x1=x1+padX
 		self.y1=y1+padY
 		if(WH==True):

@@ -30,13 +30,14 @@ def setModuletoOne(a,b,c,d):
 		controlFlag=False
 
 
-sysWidth,sysHeight=pd.getSysDimensions()
+sysHeight=864
+sysWidth=1536
 gray=(50,50,50)
 # screenBlank=np.zeros((sysHeight,sysWidth,3),np.uint8)
 folder='background/'
 imageNames=('start (1).jpg','start (2).jpg','start (3).jpg','start (4).jpg','start (5).jpg','start (6).jpg')
 chosenOne=random.choice(imageNames)
-screenBlank=cv2.resize(cv2.imread(folder+chosenOne),(sysWidth,sysHeight))
+screenBlank=cv2.imread(folder+chosenOne)
 
 
 def functionerMenu(event,x,y,flags,params):
