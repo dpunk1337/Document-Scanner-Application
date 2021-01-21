@@ -9,3 +9,5 @@ First Make Sure Following dependencies are installed via pip
 4. pip install pyzbar
 
 Copy the files on pc and run the controller.py file
+
+Make sure to run it on 16:9 screen with 1080p resolution for the best experience !!!
